@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Navbar from "./components/NavBar/Navbar";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";

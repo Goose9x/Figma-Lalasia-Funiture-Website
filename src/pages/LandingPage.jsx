@@ -1,4 +1,4 @@
-import "./LandingPage.css";
+import "./LandingPage.scss";
 import bigImage from "../assets/big-image.png";
 function LandingPage() {
   return (
@@ -18,6 +18,16 @@ function LandingPage() {
           <input type='text' />
           <button>Search</button>
         </div>
+      </div>
+      <div className='lp-benefil-title'>
+        <b>Benefits</b>
+      </div>
+      <div className='lp-benefit'>
+        <h1>Benefits when using our services</h1>
+        <p>
+          Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim
+          placerat nisi, adipiscing mauris non purus parturient.
+        </p>
       </div>
     </>
   );
