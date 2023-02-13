@@ -1,0 +1,114 @@
+#Navbar {
+    position: sticky;
+    z-index: 10;
+    width: 100%;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+    border-bottom: 2px solid #F3F3F3;
+    background-color: white;
+}
+
+.navbar-container {
+    line-height: 70px;
+    width: 80%;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-container .nav-left {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.navbar-container .nav-left .nav-logo {
+    line-height: 70px;
+    width: 30px;
+}
+
+.navbar-container .nav-left .nav-logo img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.navbar-container .nav-center ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #151411;
+}
+
+.navbar-container .nav-center ul li {
+    margin-right: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.navbar-container .nav-center ul li:hover {
+    color: #518581;
+}
+
+.navbar-container .nav-right {
+    gap: 20px;
+    display: flex;
+    color: #151411;
+}
+
+.navbar-container .nav-right ion-icon {
+    font-size: 18px;
+}
+
+.navbar-container .hambuger {
+    display: none;
+    font-size: 30px;
+    line-height: 70px;
+}
+
+@media screen and (max-width: 800px) {
+    .navbar-container .nav-right {
+        display: none;
+    }
+
+    .navbar-container .hambuger {
+        display: flex;
+    }
+
+    .navbar-container .nav-center ul {
+        display: none
+    }
+
+    .navbar-container .menu-responsive ul {
+        background-color: white;
+        z-index: 10;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid #F3F3F3;
+    }
+
+    .navbar-container .menu-responsive ul li {
+        z-index: 10;
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .navbar-container .menu-responsive ul li:hover {
+        background-color: #518581;
+        color: white;
+    }
+}
