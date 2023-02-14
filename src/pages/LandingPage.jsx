@@ -8,6 +8,11 @@ import product1 from "../assets/products/product1.png";
 import product2 from "../assets/products/product2.png";
 import product3 from "../assets/products/product3.png";
 import product4 from "../assets/products/product4.png";
+import advertise1 from "../assets/advertise/advertise1.png";
+import advertise2 from "../assets/advertise/advertise2.png";
+import avatar1 from "../assets/comment-avatar/avatar1.png";
+import quoteUp from "../assets/quote-up.png";
+import star from "../assets/Star.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -126,7 +131,70 @@ const productData = [
     price: "$58.39",
   },
 ];
+const commentData = [
+  {
+    content:
+      "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+    avatar: avatar1,
+    userName: "Janne Cooper",
+    rating: "5.0",
+  },
+  {
+    content:
+      "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+    avatar: avatar1,
+    userName: "Janne Cooper",
+    rating: "5.0",
+  },
+  {
+    content:
+      "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+    avatar: avatar1,
+    userName: "Janne Cooper",
+    rating: "5.0",
+  },
+  {
+    content:
+      "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+    avatar: avatar1,
+    userName: "Janne Cooper",
+    rating: "5.0",
+  },
+];
 function LandingPage() {
+  const settings2 = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "100px",
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+        },
+      },
+    ],
+  };
   const settings = {
     className: "center",
     centerMode: true,
@@ -244,6 +312,73 @@ function LandingPage() {
             ))}
           </Slider>
         </div>
+      </div>
+      <div className='lp-advertise'>
+        <span>Our Product</span>
+        <div className='lp-ad-material'>
+          <div className='lp-ad-material-left'>
+            <b>Crafted by talented and high quality material</b>
+          </div>
+          <div className='lp-ad-material-right'>
+            <div className='lp-ad-material-right-item'>
+              <b>20+</b>
+              <p>Years Experience</p>
+            </div>
+            <div className='lp-ad-material-right-item'>
+              <b>483</b>
+              <p>Happy Client</p>
+            </div>
+            <div className='lp-ad-material-right-item'>
+              <b>150+</b>
+              <p>Project Finished</p>
+            </div>
+          </div>
+        </div>
+        <div className='lp-ad-picture'>
+          <div className='lp-ad-picture-left'>
+            <p>
+              Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+              dignissim placerat nisi, adipiscing mauris non purus parturient.
+              morbi fermentum, vivamus et accumsan dui tincidunt pulvinar
+            </p>
+            <button>Learn More</button>
+            <img src={advertise1} alt='' />
+          </div>
+          <div className='lp-ad-picture-right'>
+            <img src={advertise2} alt='' />
+          </div>
+        </div>
+      </div>
+      <div className='lp-popular-product'>
+        <div className='lp-popular-product-describle'>
+          <span>Testimonials</span>
+          <b>What our customer say</b>
+          <p>
+            Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+            dignissim placerat nisi, adipiscing mauris non purus parturient.
+          </p>
+        </div>
+      </div>
+      <div className='lp-client-comment'>
+        <Slider {...settings2}>
+          {/* Có thể đưa 1 CommentData component vào đây */}
+          {commentData.map((e) => (
+            <Card className='lp-client-comment-card' style={{ width: "18rem" }}>
+              <img src={quoteUp} alt='' />
+              <p>{e.content}</p>
+              <Card.Body className='lp-client-comment-user'>
+                <div className='lp-client-comment-below'>
+                  <img src={e.avatar} alt='' />
+                  <b>{e.userName}</b>
+                </div>
+                <div className='lp-client-comment-below lp-client-comment-user-avatar'>
+                  <img src={star} alt='' />
+                  <b>{e.rating}</b>
+                </div>
+              </Card.Body>
+            </Card>
+          ))}
+        </Slider>
       </div>
     </>
   );
