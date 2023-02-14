@@ -227,6 +227,7 @@ function LandingPage() {
       <div className='lp-popular-product-item'>
         <div className='lp-popular-product-slider'>
           <Slider {...settings}>
+            {/* Có thể đưa 1 ProductItem component vào đây */}
             {productData.map((e) => (
               <Card
                 className='lp-popular-product-card'
